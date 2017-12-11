@@ -1,3 +1,6 @@
+
+
+
 <style>
 @keyframes animation1 {
   from {margin-left:2000px;}
@@ -102,7 +105,6 @@ body {
 </style>
 <div class="navbar2">
   <ul>
-    <meta charset="UTF-8">
     <?php
 
     function send_mail($to, $object, $content) {

@@ -1,11 +1,5 @@
-<?php
-include('mysql.php');
-?>
-<!DOCTYPE html>
-<html> 
-<head>
-	<meta charset="UTF-8">
-</head> 
+﻿<?php include('mysql.php'); ?>
+<html>  
 <body>
 	<center>
 

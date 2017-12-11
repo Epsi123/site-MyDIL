@@ -58,7 +58,7 @@ echo"\" style=\"color:#271549!important;text-decoration:none;\" class=\"glyphico
 			<td colspan="2">
 			Votre Panier</td></tr>
 			</table>';		
-			echo '<br><br><form action="checkout.php" method="post"><input type="date" name="date" required><br><br><input type="submit" value="Demander un emprunt" style="border-radius:3px"></form>'; 
+			echo '<br><br><form action="checkout.php" method="post"><b>Date de fin : </b><input type="date" name="date" required><br><br><input type="submit" value="Demander un emprunt" style="border-radius:3px"></form>'; 
 			}
 			else {
 				echo '<div class="btn btn-success" style="cursor:default">Votre panier est vide !</div>'; 

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 include('mysql.php');
 ?>
 <!DOCTYPE html>
@@ -100,7 +100,20 @@ echo "<td>";
 
 			}
 
+echo '<br><br><br><div class="btn btn-success" style="cursor:default"><font color="#271549"><b>Changement de mot de passe</b></font><br><form method="POST" action="account.php" style="margin-top:10px;"><input type="password" name="new_pass" placeholder="Mot de passe.."><br><br><input value="Modifier" type="submit"><br>';
+	if($_POST["new_pass"] != null) {
+		if($_SESSION["token"] != null) {
+  $request =  $mysqli->query("select * from sessions where token='".$_SESSION["token"]."'");
+  $array = $request->fetch_array();
+  $mail = $array["email"];
 
+	$mysqli->query("update accounts set password='".password_hash($_POST["new_pass"], PASSWORD_DEFAULT)."' where email='".$mail."'");	
+	echo '<br>Mot de passe modifié avec succès.';	
+						send_mail($mail, "MyDIL : Mot de passe modifié !" , "Votre mot de passe MyDIL à été modifié avec succès.");	
+
+}
+	}
+	echo'</div>';
 		}
 		else {
 			header('Location: login.php');	

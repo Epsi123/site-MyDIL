@@ -1,5 +1,5 @@
 <?php
-$mysqli = mysqli_connect("localhost" , "root", "root");
+$mysqli = mysqli_connect("localhost" , "root", "bibibi");
 mysqli_select_db($mysqli,"MyDIL");
 $mysqli->set_charset("utf8");
 if($_GET["sub"] != null) {

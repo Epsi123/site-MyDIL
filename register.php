@@ -20,6 +20,7 @@ include('mysql.php');
 			<button type="submit" class="btn btn-warning">Inscription</button>
 		</form>
 		<?php 
+
 		function endsWith($haystack, $needle)
 		{
 			$length = strlen($needle);
@@ -31,7 +32,6 @@ include('mysql.php');
 			$mail = $_POST["mail"];
 			if(endsWith($mail , "@epsi.fr") || endsWith($mail , "@lyon-epsi.fr")) {
 				$pass = password_hash($_POST["password"], PASSWORD_DEFAULT);
-
 				$count = $mysqli->query("select * from accounts where email='".$mail."'");
 				if($count->num_rows != 0) {
 					echo '<br><div class="btn btn-danger" style="cursor:default">Cette Adresse Email est déjà utilisée !</div>';
@@ -41,7 +41,7 @@ include('mysql.php');
 					$mysqli->query("insert into accounts values ('".$mail."','".$pass."','0')");
 					echo '<br><div class="btn btn-warning" style="cursor:default">Inscription terminée !</div><br><br>
 					<div class="btn btn-danger"><a href="login.php">Tu peux désormais te connecter ici.</a></div>';
-					send_mail($mail, "MyDIL : Inscription terminée !" , "Votre inscription à MyDIL s'est déroulée avec succès.<br><br>Vous pouvez dès à présent <a href=\"http://mydil.fr.nf/materials.php\">Commander un produit</a>.");	
+					send_mail($mail, "MyDIL : Inscription terminée !" , "Votre inscription à MyDIL s'est déroulée avec succès.<br><br>Vous pouvez dès à présent <a href=\"http://".$_SERVER['SERVER_NAME']."/materials.php\">Commander un produit</a>.");	
 
 				}
 			}
