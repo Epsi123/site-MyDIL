@@ -29,7 +29,8 @@ $request = $mysqli->query("delete from emprunts_actifs where id='".$array["id"].
 if(basename($_SERVER['PHP_SELF']) != "material-get.php") {
 include('navbar.php');
 }
-require "password_hash/password.php";
+require "utils/password_hash.php";
+require('utils/mail.php');
 
 ?>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />

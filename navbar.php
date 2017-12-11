@@ -109,9 +109,6 @@ body {
 
     function send_mail($to, $object, $content) {
 
-
-      require('mailer/class.phpmailer.php');
-
 $mail = new PHPMailer;
 $mail->isSMTP();
 $mail->SMTPAuth = true;
